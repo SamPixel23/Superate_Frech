@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hola2</title>
+</head>
+<body>
+    <h1>Prueba de operadores logicos en javaScript</h1>
+
+    <label for="edad">ingresa tu edad: </label>
+    <input type="number" id="edad" placeholder="Ej. 20">
+    <button onclick="evaluarOperadores()">Ver Resultado</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function evaluarOperadores() {
+            //Obtener  la edad ingresada por el usuario
+            let edad = parseInt(document.getElementById("edad").value);
+            let tieneMembresia = true;
+            let esFinDeSemana = true; //lo dejamos con fin de semana para este ejemplo
+            let esLunes = false; 
+
+            let resultado = "";
+
+            //Verificar la edad si es valida
+            if(isNaN(edad) || edad <= 0) {
+                resultado = "Por favor, ingrese una edad válida.";
+
+            } else{
+                //Usando el operador and
+                if(edad >=18 && tieneMembresia) {
+                    resultado += "puedes acceder al club.<br>";
+                }else{
+                    resultado += "No puedes acceder al club.<br>";
+                }
+                //Usando el operador Or
+                if( edad >= 18 ||  esFinDeSemana) {
+                    resultado+= "tienes permiso para asistir a la fiesta.<br>.";
+
+                } else {
+                    resultado += "no tienes permiso para asistir a la fiesta.<br>";
+                }
+                //Usando el operador Not
+                if( !esLunes) {
+                    resultado += "Hoy es lunes, puedes relajarte.<br>";
+
+                } else {
+                    resultado += " hoy es lunes,a trabajar!<br>";
+                }
+            }
+            document.getElementById("resultado").innerHTML = resultado
+        }
+        //me dieron un medio punto
+    </script>
+    
+</body>
+</html>
