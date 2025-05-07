@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>hola mundo en java</h1>
+
+    <script>
+        console.log("¡Hola, Mundo!");
+
+        //desafio 2
+
+        let edad = 16;
+        console.log(edad);
+
+        //desafio 3
+
+        let nombre = "samuel";
+        console.log(nombre)
+
+        let esEstudiante = true;
+        console.log(esEstudiante)
+
+        document.write("nombre: " + nombre + "<br>");
+        document.write("esEstudiante: " + esEstudiante);
+
+        //desafio 4
+
+        let num1 = 5;
+        let num2 =10;
+        console.log(num1+num2);//suma
+        console.log(num2 - num1); //resta
+        console.log( num1 * num2);//multiplicacion
+        console.log(num2 / num1); //division
+
+    </script>
+    
+</body>
+</html>
