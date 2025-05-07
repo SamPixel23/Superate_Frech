@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Operadores Aritméticos y Lógicos</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f0f0f0;
+    }
+    input, button {
+      margin: 10px 0;
+      padding: 8px;
+      font-size: 16px;
+    }
+    .resultado {
+      margin-top: 20px;
+      background: #fff;
+      padding: 15px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Operadores Aritméticos y Lógicos en JavaScript</h2>
+
+  <label>Número A: <input type="number" id="numA"></label><br>
+  <label>Número B: <input type="number" id="numB"></label><br>
+
+  <button onclick="mostrarResultados()">Calcular</button>
+
+  <div class="resultado" id="resultados">
+    <!-- Aquí se mostrarán los resultados -->
+  </div>
+
+  <script>
+    function mostrarResultados() {
+      let a = parseFloat(document.getElementById("numA").value);
+      let b = parseFloat(document.getElementById("numB").value);
+
+      // Validación
+      if (isNaN(a) || isNaN(b)) {
+        document.getElementById("resultados").innerHTML = "<p style='color:red;'>Por favor ingresa dos números válidos.</p>";
+        return;
+      }
+
+      // Aritméticos
+      let suma = a + b;
+      let resta = a - b;
+      let multiplicacion = a * b;
+      let division = b !== 0 ? (a / b).toFixed(2) : "No se puede dividir por cero";
+
+      // Lógicos
+      let esMayor = a > b;
+      let esIgual = a === b;
+      let andLogico = (a > 0) && (b > 0);
+      let orLogico = (a > 0) || (b > 0);
+      let negacionA = !(a > 0);
+
+      document.getElementById("resultados").innerHTML = `
+        <h3>Operadores Aritméticos</h3>
+        <p>Suma (a + b): ${suma}</p>
+        <p>Resta (a - b): ${resta}</p>
+        <p>Multiplicación (a * b): ${multiplicacion}</p>
+        <p>División (a / b): ${division}</p>
+
+        <h3>Operadores Lógicos</h3>
+        <p>¿a es mayor que b?: ${esMayor}</p>
+        <p>¿a es igual a b?: ${esIgual}</p>
+        <p>(a > 0) AND (b > 0): ${andLogico}</p>
+        <p>(a > 0) OR (b > 0): ${orLogico}</p>
+        <p>NOT (a > 0): ${negacionA}</p>
+      `;
+    }
+  </script>
+
+</body>
+</html>
